@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>O.D.A.A.M.E.</title>
-</head>
-<body>
-    <h1>Home Page</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block contenu %}
+    <ul>
+        <li><a href="actualites">Actualités</a></li>
+        <li><a href="blog">Blog</a></li>
+        <li><a href="clubs">Clubs</a></li>
+        <li><a href="contact">Nous contacter</a></li>
+        <li><a href="credits">Crédits</a></li>
+        <li><a href="projet">A propos du projet</a></li>
+        <li><a href="telechargements">Téléchargements</a></li>
+        <li><a href="univers">Univers</a></li>
+    </ul>
+{% endblock contenu %}

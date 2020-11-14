@@ -1,0 +1,49 @@
+:root {
+    font-size:16px;
+    scrollbar-color: var(--bg-secondary) var(--bg-primary);
+    scrollbar-width: thin;
+    --bg-primary: #1e1e24;
+    --bg-secondary: #0000ff;
+}
+
+.page {
+    border: 10px solid black;
+    background-color: lightblue;
+}
+
+.contenu_de_page {
+    margin-top: 5rem;
+    padding: 20px;
+}
+
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background_color: var(--bg-primary);
+}
+
+.post {
+    border: 5px solid black;
+    background-color: #9c9c9c;
+}
+
+.contenu_de_post{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+div#espace{
+    padding: 10px;
+}
+
+/* Spécifique aux navigateurs utilisant webkit (pour les autres tels que firefox mon préféré <3 c'est géré dans :root):*/
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+    background:#1e1e24;
+}
+body::-webkit-scrollbar-thumb {
+    baackground: #0000ff;
+}

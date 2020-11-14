@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>O.D.A.A.M.E.</title>
-</head>
-<body>
-    <h1>About Page</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block contenu %}
+    {% for post in posts %}
+        <div class="post">
+            <h1>{{ post.titre }}</h1>
+            <p class="contenu_de_post">{{ post.contenu }}</p>
+            <p>Posté par {{ post.auteur }} le {{ post.date }}</p>
+        </div>
+        <div id="espace"></div>
+    {% endfor%}
+
+{% endblock contenu %}
