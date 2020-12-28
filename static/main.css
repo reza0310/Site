@@ -1,31 +1,41 @@
+/*--base--*/
+
 :root {
-    font-size:16px;
+    font-size: 30px;
     scrollbar-color: var(--bg-secondary) var(--bg-primary);
     scrollbar-width: thin;
     --bg-primary: #1e1e24;
-    --bg-secondary: #0000ff;
+    --bg-secondary: #0000ff; /*A.K.A. blue*/
+    --bg-tertiary: #add8e6; /*A.K.A. lightblue*/
+    --bg-quaternary: #000000; /*A.K.A. black*/
+    --bg-quinary: #ffffff; /*A.K.A. white*/
+    --bg-senary: #9c9c9c;
+    --navbar-height: 10vh;
 }
 
 .page {
-    background-color: lightblue;
+    background-color: var(--bg-tertiary);
     padding: 0;
     margin: 0;
 }
 
 .contenu_de_page {
-    border: 10px solid black;
+    border: 10px solid var(--bg-quaternary);
     padding: 0;
     margin: 0;
 }
+
+/*--Barre de navigation--*/
 
 .navbar {
     padding: 0;
     margin: 0;
-    height: 5rem;
+    height: var(--navbar-height);
+    background-color: var(--bg-primary);
 }
 
 .navbar-nav {
-    height: 2.5rem;
+    height: 25vh;
     width: 100vw;
     list-style: none;
     padding: 0;
@@ -33,18 +43,14 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--bg-primary);
-}
-
-ul#textes {
-    background-color: lightblue;
-    height: 2rem
+    height: var(--navbar-height);
 }
 
 .nav-link {
     display: flex;
     align-items: center;
     text-decoration: none;
+    flex-direction: column;
 }
 
 .nav-link:visited {
@@ -52,54 +58,75 @@ ul#textes {
 }
 
 .nav-item {
+    border: 10px solid var(--bg-primary);
     width: 100%;
-    color: var(--bg-secondary);
-    height: 5rem;
+    height: var(--navbar-height);
     text-align: center;
 }
 
 .nav-subitem {
-    margin-left: 4.5vw;
-    height: 4rem;
-    width: 4rem;
+    height: var(--navbar-height);
+    width: var(--navbar-height);
+    display: table;
 }
 
 .link-text {
-    display: none;
-    margin-left: 4vw;
+    color: transparent;
+    //display: none;
 }
 
 .navbar:hover {
-    height: 7rem;
+    height: calc(var(--navbar-height)*1.5);
 }
 
 .navbar:hover .link-text {
-    display: block;
+    color: var(--bg-secondary);
+    //display: block;
 }
 
-.navbar:hover ul#textes {
-    background-color: var(--bg-primary);
+path {
+    position: relative;
 }
 
-span#petits {
-    margin-left: 5vw;
+/*--Actualités--*/
+
+div#actus{
+    background-color: var(--bg-quaternary);
+    width: 100%;
+    height: 10%;
+    border: 5px solid var(--bg-quinary);
 }
 
-span#moyens {
-    margin-left: 4.5vw;
+/*--Univers--*/
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-span#gros {
-    margin-left: 3vw;
+td {
+    border: 2px solid var(--bg-primary);
+    text-align: center;
+    overflow: hidden;
 }
+
+.cache {
+    text-decoration: none;
+    color: var(--bg-quaternary);
+    width: 100%;
+    height: 100%;
+}
+
+/*--Blog--*/
 
 .post {
-    border: 5px solid black;
-    background-color: #9c9c9c;
+    border: 5px solid var(--bg-quaternary);
+    background-color: var(--bg-senary);
 }
 
-.contenu_de_post{
-    border: 1px solid black;
+.contenu_de_post {
+    border: 1px solid var(--bg-quaternary);
     padding: 10px;
 }
 
@@ -107,14 +134,13 @@ div#espace{
     padding: 10px;
 }
 
-div#actus{
-    background-color: #000000;
-    width: 100%;
-    height: 10%;
-    border: 5px solid white;
+/*--Crédits--*/
+
+.credits {
+    text-align: center;
 }
 
-/* Spécifique aux navigateurs utilisant webkit (pour les autres tels que firefox mon préféré <3 c'est géré dans :root):*/
+/*--Spécifique aux navigateurs utilisant webkit (pour les autres tels que firefox mon préféré <3 c'est géré dans :root):*/
 body::-webkit-scrollbar {
     width: 0.25rem;
 }

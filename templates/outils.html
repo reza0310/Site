@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block contenu %}
+    <form action="" method="post">
+        <label for="poids">Votre poids en kg:</label>
+        <input type="number" name="poids" value="50">
+        <br>
+        <label for="taille">Votre taille en cm:</label>
+        <input type="number" name="taille" value="165">
+    </form>
+    <div id="IMC"></div>
+        <p>Indice de masse corporelle (IMC)	Interprétation (d'après l'OMS) </p>
+        <p id="18,5" class="poids">moins de 18,5 	Insuffisance pondérale (maigreur)</p>
+        <p id="25" class="poids">18,5 à 25	Corpulence normale</p>
+        <p id="30" class="poids">25 à 30	Surpoids</p>
+        <p id="35" class="poids">30 à 35	Obésité modérée</p>
+        <p id="40" class="poids">35 à 40	Obésité sévère</p>
+        <p id="40+" class="poids">plus de 40	Obésité morbide ou massive</p>
+    <script type="text/javascript" src="calcul_imc"></script>
+{% endblock contenu %}

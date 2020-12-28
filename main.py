@@ -1,6 +1,10 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, send_from_directory
+
 app = Flask(__name__)
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route("/")
 @app.route("/home")
@@ -18,6 +22,26 @@ def univers():
     return render_template("univers.html")
 
 
+@app.route("/univers/aube")
+def aube():
+    return render_template("univers/aube.html")
+
+
+@app.route("/univers/aube/thulium")
+def thulium():
+    return render_template("univers/aube/Thulium.html")
+
+
+@app.route("/univers/aube/francium")
+def francium():
+    return render_template("univers/aube/Francium.html")
+
+
+@app.route("/univers/autre")
+def autre():
+    return render_template("univers/autre.html")
+
+
 @app.route("/actualites")
 def actualites():
     return render_template("actualites.html")
@@ -33,9 +57,13 @@ def telechargements():
     return render_template("telechargements.html")
 
 
-@app.route("/contact")
+@app.route("/outils")
 def contact():
-    return render_template("contact.html")
+    return render_template("outils.html")
+
+@app.route('/calcul_imc')
+def calcul_imc():
+    return send_from_directory(app.root_path, 'JavaScripts/calcul_imc.js', mimetype='JavaScript')
 
 
 @app.route("/credits")
