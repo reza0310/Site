@@ -37,6 +37,11 @@ def francium():
     return render_template("univers/aube/Francium.html")
 
 
+@app.route("/univers/aube/hydrogene")
+def hydrogene():
+    return render_template("univers/aube/Hydrogene.html")
+
+
 @app.route("/univers/autre")
 def autre():
     return render_template("univers/autre.html")
