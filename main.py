@@ -3,6 +3,8 @@ from flask import Flask, render_template, url_for, send_from_directory
 app = Flask(__name__)
 
 @app.route('/favicon.ico')
+@app.route('/univers/aube/favicon.ico')
+@app.route('/univers/favicon.ico')
 def favicon():
     return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
@@ -24,22 +26,22 @@ def univers():
 
 @app.route("/univers/aube")
 def aube():
-    return render_template("univers/aube.html")
+    return render_template("univers/aube.html", titre="Aube")
 
 
 @app.route("/univers/aube/thulium")
 def thulium():
-    return render_template("univers/aube/Thulium.html")
+    return render_template("univers/aube/Thulium.html", titre="Aube")
 
 
 @app.route("/univers/aube/francium")
 def francium():
-    return render_template("univers/aube/Francium.html")
+    return render_template("univers/aube/Francium.html", titre="Aube")
 
 
 @app.route("/univers/aube/hydrogene")
 def hydrogene():
-    return render_template("univers/aube/Hydrogene.html")
+    return render_template("univers/aube/Hydrogene.html", titre="Aube")
 
 
 @app.route("/univers/autre")
